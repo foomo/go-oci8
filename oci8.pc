@@ -1,9 +1,18 @@
-prefix=/usr
-includedir=${prefix}/include/oracle/12.2/client64
-libdir=${prefix}/lib/oracle/12.2/client64/lib
+prefix=c:/oracle/instantclient_12_2/sdk
+
+version=12.2
+build=client64
+
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+glib_genmarshal=glib-genmarshal
+gobject_query=gobject-query
+glib_mkenums=glib-mkenums
 
 Name: oci8
-Description: Oracle Instant Client
-Version: 12.2
+Description: Oracle database engine
+Version: ${version}
+Libs: -L${libdir} -loci
+Libs.private:
 Cflags: -I${includedir}
-Libs: -L${libdir} -lclntsh
